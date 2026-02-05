@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seja um Representante • Lucro Invisível</title>
+  <meta name="description"
+    content="Seja um representante comercial (PJ) do Lucro Invisível. Comissões mensais por até 12 meses ou enquanto o cliente estiver ativo (o que ocorrer primeiro)." />
+
+  <style>
+    :root {
+      --bg: #07090f;
+      --panel: rgba(255, 255, 255, .04);
+      --border: rgba(255, 255, 255, .12);
+      --text: rgba(255, 255, 255, .94);
+      --muted: rgba(255, 255, 255, .70);
+      --muted2: rgba(255, 255, 255, .58);
+      --green: #7CFF2E;
+      --green2: #3DFF79;
+      --radius: 18px;
+      --radius2: 22px;
+      --shadow: 0 22px 70px rgba(0, 0, 0, .45);
+      --max: 980px;
+    }
+
+    * { box-sizing: border-box }
+    html, body {
+      margin: 0; padding: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background: var(--bg); color: var(--text);
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+
+    .nav {
+      position: sticky; top: 0; z-index: 90;
+      background: rgba(7, 9, 15, .86);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 14px 0; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 1000; }
+    .logo-box {
+      width: 38px; height: 38px; border-radius: 14px;
+      background: linear-gradient(135deg, var(--green), var(--green2));
+      color: #041308; display: flex; align-items: center; justify-content: center; font-weight: 1100;
+    }
+    .brand small { display: block; color: var(--muted2); font-weight: 800; margin-top: 2px; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 12px 16px; border-radius: 14px; font-weight: 1000;
+      border: 1px solid var(--border); background: rgba(255, 255, 255, .04);
+      transition: .15s; white-space: nowrap; cursor: pointer;
+    }
+    .btn:hover { transform: translateY(-1px); background: rgba(255, 255, 255, .06); }
+    .btn.primary {
+      background: linear-gradient(135deg, var(--green), var(--green2));
+      color: #041308; border-color: rgba(0, 0, 0, .10);
+      box-shadow: 0 22px 70px rgba(124, 255, 46, .16);
+    }
+
+    header { padding: 58px 0 22px; }
+    h1 { margin: 0 0 10px; font-size: clamp(32px, 4.2vw, 46px); letter-spacing: -1px; }
+    p.lead { margin: 0; color: var(--muted); line-height: 1.8; font-size: 16px; max-width: 70ch; }
+
+    section { padding: 34px 0; }
+    .card {
+      border-radius: var(--radius2);
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, .04);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
+    .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 14px; }
+
+    .item { border-radius: 18px; border: 1px solid var(--border); background: rgba(255, 255, 255, .03); padding: 16px; }
+    .item h3 { margin: 0 0 8px; font-size: 16px; letter-spacing: -.3px; }
+    .item p { margin: 0; color: var(--muted); line-height: 1.75; font-size: 14px; }
+
+    .pill {
+      display: inline-flex; align-items: center;
+      padding: 6px 10px; border-radius: 999px;
+      border: 1px solid rgba(124, 255, 46, .30);
+      background: rgba(124, 255, 46, .08);
+      color: rgba(124, 255, 46, .95);
+      font-weight: 1000; font-size: 12px;
+    }
+
+    .rules ul { margin: 10px 0 0; padding-left: 18px; color: var(--muted); line-height: 1.75; font-size: 14px; display: grid; gap: 8px; }
+    .rules b { color: var(--text); }
+
+    label { display: block; margin: 12px 0 6px; color: var(--muted2); font-size: 13px; font-weight: 900; }
+    input, select, textarea {
+      width: 100%;
+      background: rgba(255, 255, 255, .03);
+      border: 1px solid rgba(255, 255, 255, .12);
+      color: var(--text);
+      border-radius: 14px;
+      padding: 12px 12px;
+      outline: none;
+      font-size: 14px;
+    }
+    textarea { min-height: 110px; resize: vertical; }
+    .form-actions { margin-top: 12px; display: flex; gap: 10px; flex-wrap: wrap; }
+
+    footer { padding: 28px 0; color: var(--muted2); font-size: 13px; border-top: 1px solid var(--border); margin-top: 26px; }
+
+    @media (max-width: 900px) {
+      .grid2, .grid3 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    const WA = "https://wa.me/5511939479749";
+    const waText = (t) => `${WA}?text=${encodeURIComponent(t)}`;
+  </script>
+
+  <div class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a class="brand" href="index.html" aria-label="Voltar para a página inicial">
+          <div class="logo-box">LI</div>
+          <div style="line-height:1.05">
+            <div>Lucro Invisível</div>
+            <small>Representantes Comerciais (PJ)</small>
+          </div>
+        </a>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end">
+          <a class="btn" href="index.html#planos">Ver planos</a>
+          <a class="btn primary" id="ctaTop" href="#">Quero ser representante</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header>
+    <div class="container">
+      <span class="pill">Obrigatório: Representante PJ</span>
+      <h1>Seja um representante da sua região</h1>
+      <p class="lead">
+        Você indica, a gente executa. Você recebe comissões mensais por até <b>12 meses</b> ou enquanto o cliente
+        permanecer pagante e ativo, <b>o que ocorrer primeiro</b>.
+      </p>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <div class="grid3">
+        <div class="item">
+          <h3>Modelo simples</h3>
+          <p>Você prospecta e fecha. Nós entregamos. Você recebe recorrência com regras claras.</p>
+        </div>
+        <div class="item">
+          <h3>Produto fácil de vender</h3>
+          <p>Dono entende rápido: “onde estou perdendo dinheiro no atendimento e como corrigir”.</p>
+        </div>
+        <div class="item">
+          <h3>Recorrência de verdade</h3>
+          <p>Comissão mensal por até 12 meses (ou enquanto o cliente estiver ativo).</p>
+        </div>
+      </div>
+
+      <div class="grid2" style="margin-top:14px;">
+        <div class="card rules">
+          <h2 style="margin:0 0 6px; letter-spacing:-.4px;">Como funciona a comissão</h2>
+          <ul>
+            <li><b>Início:</b> a comissão começa após o <b>primeiro pagamento confirmado</b> do cliente.</li>
+            <li><b>Duração:</b> paga por até <b>12 meses</b> ou enquanto o cliente estiver <b>ativo</b>, o que ocorrer primeiro.</li>
+            <li><b>Cancelou?</b> sem cliente ativo, não há comissão no mês seguinte.</li>
+            <li><b>Upgrade de plano:</b> a comissão acompanha o valor do plano (se o cliente subir, você ganha sobre o novo valor).</li>
+            <li><b>Pagamento:</b> mensal em data fixa (definida no contrato).</li>
+          </ul>
+          <p style="margin:10px 0 0; color:var(--muted2); font-size:13px; line-height:1.6;">
+            Observação: os percentuais e a data de pagamento ficam definidos no contrato do representante.
+          </p>
+        </div>
+
+        <div class="card rules">
+          <h2 style="margin:0 0 6px; letter-spacing:-.4px;">Regras básicas</h2>
+          <ul>
+            <li><b>Obrigatório PJ:</b> só trabalhamos com representante com <b>CNPJ ativo</b>.</li>
+            <li><b>Sem exclusividade automática:</b> a região pode ser ajustada por performance.</li>
+            <li><b>Conduta:</b> abordagem profissional e transparente (sem promessas irreais).</li>
+            <li><b>Cadastro:</b> você registra os leads pelo canal combinado para garantir a atribuição.</li>
+          </ul>
+          <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn" href="index.html">Voltar ao site</a>
+            <a class="btn primary" id="ctaMid" href="#">Quero me cadastrar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="card">
+        <h2 style="margin:0 0 6px; letter-spacing:-.4px;">Cadastro de representante (PJ)</h2>
+        <p style="margin:0 0 14px; color:var(--muted); line-height:1.75;">
+          Preencha e envie. Isso vai direto no WhatsApp com suas informações.
+        </p>
+
+        <form id="repForm">
+          <div class="grid2">
+            <div>
+              <label>Nome completo</label>
+              <input name="nome" required placeholder="Ex: Renato Mendes" />
+            </div>
+            <div>
+              <label>WhatsApp</label>
+              <input name="whatsapp" required placeholder="Ex: (11) 99999-9999" />
+            </div>
+          </div>
+
+          <div class="grid2">
+            <div>
+              <label>CNPJ (obrigatório)</label>
+              <input name="cnpj" required placeholder="Ex: 12.345.678/0001-90" />
+            </div>
+            <div>
+              <label>Nome da empresa (PJ)</label>
+              <input name="empresa" required placeholder="Ex: Sua Empresa LTDA" />
+            </div>
+          </div>
+
+          <div class="grid2">
+            <div>
+              <label>Cidade/UF (sua região)</label>
+              <input name="regiao" required placeholder="Ex: Suzano/SP" />
+            </div>
+            <div>
+              <label>Experiência comercial</label>
+              <select name="exp" required>
+                <option value="">Selecione</option>
+                <option>Iniciante (até 1 ano)</option>
+                <option>Intermediário (1 a 3 anos)</option>
+                <option>Avançado (3+ anos)</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label>Seu público ideal (quem você consegue acessar?)</label>
+            <textarea name="publico" required
+              placeholder="Ex: clínicas, academias, escolas, imobiliárias, prestadores de serviço..."></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn primary" type="submit">Enviar cadastro no WhatsApp</button>
+            <a class="btn" href="index.html#planos">Ver planos</a>
+          </div>
+
+          <p style="margin:12px 0 0; color:var(--muted2); font-size:13px; line-height:1.6;">
+            Ao enviar, você confirma que atua como PJ (CNPJ ativo) e aceita as regras do programa.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Lucro Invisível. Página de representantes (PJ).
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const ctaMsg = "Olá! Quero me cadastrar como REPRESENTANTE (PJ) do Lucro Invisível. Minha região é: ";
+    document.getElementById("ctaTop").href = waText(ctaMsg);
+    document.getElementById("ctaMid").href = waText(ctaMsg);
+
+    const form = document.getElementById("repForm");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const fd = new FormData(form);
+      const data = Object.fromEntries(fd.entries());
+
+      const msg =
+        `Olá! Quero me cadastrar como REPRESENTANTE (PJ) do Lucro Invisível.\n\n` +
+        `Nome: ${data.nome}\n` +
+        `WhatsApp: ${data.whatsapp}\n` +
+        `CNPJ: ${data.cnpj}\n` +
+        `Empresa (PJ): ${data.empresa}\n` +
+        `Região: ${data.regiao}\n` +
+        `Experiência: ${data.exp}\n\n` +
+        `Público ideal:\n${data.publico}\n\n` +
+        `Obs: Estou ciente que o representante deve ser PJ (CNPJ ativo).`;
+
+      window.location.href = waText(msg);
+    });
+  </script>
+</body>
+
+</html>

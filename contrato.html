@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contrato • Representante Comercial (PJ) • Lucro Invisível</title>
+  <meta name="description"
+    content="Contrato de Representação Comercial (PJ) do Lucro Invisível. Comissão escalonada, pagamento no 5º dia útil, sem vínculo CLT." />
+
+  <style>
+    :root {
+      --bg: #07090f;
+      --panel: rgba(255, 255, 255, .04);
+      --panel2: rgba(255, 255, 255, .03);
+      --border: rgba(255, 255, 255, .12);
+      --text: rgba(255, 255, 255, .94);
+      --muted: rgba(255, 255, 255, .72);
+      --muted2: rgba(255, 255, 255, .58);
+      --green: #7CFF2E;
+      --green2: #3DFF79;
+      --radius: 18px;
+      --radius2: 22px;
+      --shadow: 0 22px 70px rgba(0, 0, 0, .45);
+      --max: 980px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0; padding: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background: var(--bg); color: var(--text);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+
+    /* NAV */
+    .nav {
+      position: sticky; top: 0; z-index: 90;
+      background: rgba(7, 9, 15, .86);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 14px; padding: 14px 0;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 1000; }
+    .logo-box {
+      width: 38px; height: 38px; border-radius: 14px;
+      background: linear-gradient(135deg, var(--green), var(--green2));
+      color: #041308; display: flex; align-items: center; justify-content: center; font-weight: 1100;
+    }
+    .brand small { display: block; color: var(--muted2); font-weight: 800; margin-top: 2px; }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 12px 16px; border-radius: 14px; font-weight: 1000;
+      border: 1px solid var(--border); background: rgba(255, 255, 255, .04);
+      transition: .15s; white-space: nowrap; cursor: pointer;
+    }
+    .btn:hover { transform: translateY(-1px); background: rgba(255, 255, 255, .06); }
+    .btn.primary {
+      background: linear-gradient(135deg, var(--green), var(--green2));
+      color: #041308; border-color: rgba(0, 0, 0, .10);
+      box-shadow: 0 22px 70px rgba(124, 255, 46, .16);
+    }
+    .btn.primary:hover { box-shadow: 0 28px 90px rgba(124, 255, 46, .20); }
+
+    /* PAGE */
+    header { padding: 44px 0 18px; }
+    h1 { margin: 0 0 10px; font-size: clamp(28px, 4.2vw, 42px); letter-spacing: -1px; }
+    .lead {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 15.5px;
+      max-width: 78ch;
+    }
+
+    .pill {
+      display: inline-flex; align-items: center;
+      padding: 6px 10px; border-radius: 999px;
+      border: 1px solid rgba(124, 255, 46, .30);
+      background: rgba(124, 255, 46, .08);
+      color: rgba(124, 255, 46, .95);
+      font-weight: 1000; font-size: 12px;
+      margin-bottom: 12px;
+    }
+
+    section { padding: 18px 0 34px; }
+
+    .card {
+      border-radius: var(--radius2);
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, .04);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .toolbar {
+      display: flex; gap: 10px; flex-wrap: wrap;
+      align-items: center; justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .contract {
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, .10);
+      background: rgba(255, 255, 255, .03);
+      padding: 16px;
+    }
+
+    .contract h2 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -.3px;
+    }
+
+    .contract p, .contract li {
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 14px;
+    }
+
+    .contract strong { color: var(--text); }
+
+    .contract .meta {
+      margin: 0 0 14px;
+      color: var(--muted2);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .clause-title {
+      margin: 14px 0 6px;
+      color: var(--text);
+      font-weight: 1100;
+      letter-spacing: -.2px;
+    }
+
+    .sep {
+      border-top: 1px solid rgba(255, 255, 255, .10);
+      margin: 14px 0;
+    }
+
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 860px) { .grid2 { grid-template-columns: 1fr; } }
+
+    label { display: block; margin: 10px 0 6px; color: var(--muted2); font-size: 13px; font-weight: 900; }
+    input, textarea {
+      width: 100%;
+      background: rgba(255, 255, 255, .03);
+      border: 1px solid rgba(255, 255, 255, .12);
+      color: var(--text);
+      border-radius: 14px;
+      padding: 12px 12px;
+      outline: none;
+      font-size: 14px;
+    }
+    textarea { min-height: 90px; resize: vertical; }
+
+    .accept {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(124, 255, 46, .35);
+      background: radial-gradient(900px 360px at 18% 20%, rgba(124, 255, 46, .10), transparent 60%), rgba(255, 255, 255, .03);
+      margin-top: 14px;
+    }
+
+    .accept input[type="checkbox"] {
+      width: 18px; height: 18px; margin-top: 2px;
+      accent-color: #7CFF2E;
+    }
+
+    .accept small {
+      display: block;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 13px;
+    }
+
+    .actions { margin-top: 12px; display: flex; gap: 10px; flex-wrap: wrap; }
+
+    footer {
+      padding: 26px 0;
+      color: var(--muted2);
+      font-size: 13px;
+      border-top: 1px solid var(--border);
+      margin-top: 24px;
+    }
+
+    /* PRINT */
+    @media print {
+      .nav, .toolbar, .accept, .actions, footer { display: none !important; }
+      body { background: #fff; color: #000; }
+      .card, .contract { box-shadow: none; border: 0; background: transparent; }
+      .contract p, .contract li { color: #111; }
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    const WA = "https://wa.me/5511939479749";
+    const waText = (t) => `${WA}?text=${encodeURIComponent(t)}`;
+    const byId = (id) => document.getElementById(id);
+  </script>
+
+  <!-- NAV -->
+  <div class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a class="brand" href="index.html" aria-label="Voltar para a página inicial">
+          <div class="logo-box">LI</div>
+          <div style="line-height:1.05">
+            <div>Lucro Invisível</div>
+            <small>Contrato • Representantes (PJ)</small>
+          </div>
+        </a>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;">
+          <a class="btn" href="representante.html">Cadastro PJ</a>
+          <a class="btn primary"
+            href="https://wa.me/5511939479749?text=Ol%C3%A1!%20Quero%20tirar%20uma%20d%C3%BAvida%20sobre%20o%20contrato%20de%20representante%20(PJ)%20do%20Lucro%20Invis%C3%ADvel.">
+            Tirar dúvida no WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <div class="pill">Obrigatório: representante PJ (CNPJ ativo)</div>
+      <h1>Contrato de Representação Comercial (PJ)</h1>
+      <p class="lead">
+        Leia com calma. Ao final, você pode confirmar o aceite e enviar pelo WhatsApp para formalização.
+        Este documento é uma base simples e objetiva para a relação comercial entre empresas.
+      </p>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <section>
+    <div class="container">
+      <div class="card">
+        <div class="toolbar">
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn" href="index.html">Voltar ao site</a>
+            <button class="btn" onclick="window.print()">Imprimir / Salvar em PDF</button>
+          </div>
+          <div style="color:var(--muted2); font-size:13px;">
+            Última atualização: <span id="lastUpdate"></span>
+          </div>
+        </div>
+
+        <div class="contract" id="contractText">
+          <h2>CONTRATO DE REPRESENTAÇÃO COMERCIAL (PJ) – LUCRO INVISÍVEL</h2>
+          <p class="meta">
+            <strong>CONTRATANTE:</strong> Lucro Invisível, pessoa jurídica de direito privado, inscrita no
+            <strong>CNPJ nº 40.685.871/0001-00</strong>, com sede na <strong>Estrada dos Fernandes, nº 2120,
+              Parque Santa Rosa, Suzano/SP, CEP 08664-005</strong>, neste ato representada por
+            <strong>Renato Pereira da Silva</strong>, <strong>CPF nº 231.256.158-10</strong>,
+            <strong>brasileiro, divorciado, empresário</strong>, doravante denominada <strong>CONTRATANTE</strong>.
+            <br><br>
+            <strong>CONTRATADA (REPRESENTANTE):</strong> ___________________________________________,
+            pessoa jurídica, inscrita no CNPJ nº ______________________, com sede em ___________________________________________,
+            doravante denominada <strong>REPRESENTANTE</strong>.
+          </p>
+
+          <div class="sep"></div>
+
+          <div class="clause-title">CLÁUSULA 1ª – OBJETO</div>
+          <p>
+            A atuação da REPRESENTANTE na <strong>prospecção, indicação e fechamento de clientes</strong> para os serviços
+            comercializados pela CONTRATANTE, incluindo os planos <strong>Lucro Invisível</strong>, <strong>Renda Visível</strong>
+            e <strong>Máquina de Vendas</strong>.
+          </p>
+
+          <div class="clause-title">CLÁUSULA 2ª – REQUISITO OBRIGATÓRIO (PJ)</div>
+          <p>
+            A REPRESENTANTE declara atuar <strong>exclusivamente como Pessoa Jurídica (PJ)</strong>, com <strong>CNPJ ativo</strong>,
+            sendo vedada a atuação como pessoa física.
+          </p>
+
+          <div class="clause-title">CLÁUSULA 3ª – INDICAÇÃO E ATRIBUIÇÃO DE CLIENTES</div>
+          <p>
+            Considera-se Cliente Indicado aquele registrado nos <strong>canais oficiais</strong> definidos pela CONTRATANTE,
+            com identificação clara da REPRESENTANTE. A CONTRATANTE poderá recusar clientes fora do perfil ou com risco jurídico,
+            financeiro ou reputacional, sem gerar direito a comissão.
+          </p>
+
+          <div class="clause-title">CLÁUSULA 4ª – COMISSÃO ESCALONADA</div>
+          <p>
+            A comissão incidirá sobre os valores <strong>efetivamente pagos</strong> pelos clientes <strong>ativos e adimplentes</strong>,
+            conforme o número de clientes ativos vinculados à REPRESENTANTE no mês de referência:
+          </p>
+          <ul>
+            <li><strong>01 a 19</strong> clientes ativos: <strong>10%</strong></li>
+            <li><strong>20 a 49</strong> clientes ativos: <strong>15%</strong></li>
+            <li><strong>50 ou mais</strong> clientes ativos: <strong>20% + bônus por metas</strong></li>
+          </ul>
+          <p>
+            O bônus por metas poderá ser definido pela CONTRATANTE por comunicado interno, campanha específica ou aditivo,
+            sem descaracterizar o presente contrato.
+          </p>
+          <p>
+            A comissão será devida por até <strong>12 (doze) meses</strong> a partir do <strong>primeiro pagamento confirmado</strong>
+            do cliente, ou enquanto o cliente permanecer ativo, <strong>o que ocorrer primeiro</strong>.
+          </p>
+
+          <div class="clause-title">CLÁUSULA 5ª – APURAÇÃO E PAGAMENTO</div>
+          <p>
+            Os contratos fechados do <strong>dia 01 ao último dia do mês</strong> serão apurados mensalmente, desde que haja
+            <strong>pagamento confirmado</strong> pelo cliente. O pagamento das comissões ocorrerá no
+            <strong>5º (quinto) dia útil do mês subsequente</strong>, mediante cliente ativo e adimplente.
+          </p>
+
+          <div class="clause-title">CLÁUSULA 6ª – AUTONOMIA E AUSÊNCIA DE HORÁRIO</div>
+          <p>
+            Não existe obrigação de horário, jornada, metas diárias ou comparecimento físico. A atuação é <strong>autônoma</strong>,
+            sem subordinação, não havendo controle de jornada pela CONTRATANTE.
+          </p>
+
+          <div class="clause-title">CLÁUSULA 7ª – PERFORMANCE MÍNIMA E ENCERRAMENTO AUTOMÁTICO</div>
+          <p>
+            Caso a REPRESENTANTE não realize <strong>nenhuma venda</strong> no prazo de <strong>90 (noventa) dias consecutivos</strong>,
+            contados da assinatura do contrato ou da última venda, o contrato será <strong>encerrado automaticamente</strong>, sem aviso prévio.
+          </p>
+          <p>
+            No caso de encerramento automático, a REPRESENTANTE receberá <strong>apenas a comissão do mês de encerramento</strong>,
+            se houver cliente ativo e pagamento confirmado. Não haverá comissões futuras fora do previsto neste contrato.
+          </p>
+
+          <div class="clause-title">CLÁUSULA 8ª – INEXISTÊNCIA DE VÍNCULO TRABALHISTA (CLT)</div>
+          <p>
+            As partes declaram inexistir vínculo empregatício, nos termos do <strong>art. 3º da CLT</strong>, sendo a relação
+            regida pelo <strong>Código Civil</strong>, especialmente os <strong>arts. 421, 421-A e 722</strong>, em caráter estritamente comercial.
+            Não há salário, subordinação, pessoalidade ou habitualidade típica de relação de emprego.
+          </p>
+
+          <div class="clause-title">CLÁUSULA 9ª – RESCISÃO</div>
+          <p>
+            O contrato poderá ser rescindido por qualquer parte mediante aviso prévio de ____ dias, sem prejuízo do encerramento automático previsto
+            na Cláusula 7ª. Em caso de fraude ou dano reputacional, a rescisão poderá ser imediata.
+          </p>
+
+          <div class="clause-title">CLÁUSULA 10ª – FORO</div>
+          <p>Fica eleito o foro da comarca de <strong>Suzano/SP</strong> para dirimir eventuais controvérsias.</p>
+
+          <div class="sep"></div>
+
+          <p class="meta">
+            <strong>Local e data:</strong> ____________________________<br>
+            <strong>CONTRATANTE:</strong> ____________________________________ (Renato Pereira da Silva)<br>
+            <strong>REPRESENTANTE (PJ):</strong> ____________________________________
+          </p>
+        </div>
+
+        <!-- ACEITE -->
+        <div class="accept" id="acceptBox">
+          <input type="checkbox" id="agree" />
+          <div>
+            <strong>Li e concordo com os termos</strong>
+            <small>
+              Para formalizar, preencha os dados abaixo e clique em “Enviar aceite no WhatsApp”.
+              Isso serve como registro de aceite e facilita a assinatura depois.
+            </small>
+          </div>
+        </div>
+
+        <div class="grid2" style="margin-top:12px;">
+          <div>
+            <label>Seu nome (representante)</label>
+            <input id="repNome" placeholder="Ex: João da Silva" />
+          </div>
+          <div>
+            <label>WhatsApp</label>
+            <input id="repWhats" placeholder="Ex: (11) 99999-9999" />
+          </div>
+        </div>
+
+        <div class="grid2">
+          <div>
+            <label>CNPJ (obrigatório)</label>
+            <input id="repCnpj" placeholder="Ex: 12.345.678/0001-90" />
+          </div>
+          <div>
+            <label>Região (cidade/UF)</label>
+            <input id="repRegiao" placeholder="Ex: Suzano/SP" />
+          </div>
+        </div>
+
+        <label>Observação (opcional)</label>
+        <textarea id="repObs" placeholder="Se quiser, escreva algo curto aqui..."></textarea>
+
+        <div class="actions">
+          <button class="btn primary" id="sendBtn">Enviar aceite no WhatsApp</button>
+          <a class="btn" href="representante.html">Voltar ao cadastro</a>
+        </div>
+
+        <p style="margin:12px 0 0; color:var(--muted2); font-size:13px; line-height:1.6;">
+          Dica: você pode clicar em “Imprimir / Salvar em PDF” e guardar uma cópia.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Lucro Invisível • Contrato de representantes (PJ)
+    </div>
+  </footer>
+
+  <script>
+    // datas
+    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("lastUpdate").textContent = new Date().toLocaleDateString("pt-BR");
+
+    // envio aceite
+    document.getElementById("sendBtn").addEventListener("click", () => {
+      const agree = document.getElementById("agree").checked;
+      const nome = document.getElementById("repNome").value.trim();
+      const whats = document.getElementById("repWhats").value.trim();
+      const cnpj = document.getElementById("repCnpj").value.trim();
+      const regiao = document.getElementById("repRegiao").value.trim();
+      const obs = document.getElementById("repObs").value.trim();
+
+      if (!agree) {
+        alert("Marque a caixa 'Li e concordo com os termos' para enviar o aceite.");
+        return;
+      }
+      if (!nome || !cnpj) {
+        alert("Preencha pelo menos seu nome e o CNPJ (obrigatório).");
+        return;
+      }
+
+      const msg =
+        `Olá! Eu li e concordo com o CONTRATO DE REPRESENTAÇÃO COMERCIAL (PJ) do Lucro Invisível.\n\n` +
+        `Dados do representante:\n` +
+        `Nome: ${nome}\n` +
+        `WhatsApp: ${whats || "não informado"}\n` +
+        `CNPJ: ${cnpj}\n` +
+        `Região: ${regiao || "não informado"}\n\n` +
+        `Declaro que atuo como PJ (CNPJ ativo) e aceito os termos do contrato publicado em:\n` +
+        `https://www.lucroinvisivel.online/contrato.html\n\n` +
+        (obs ? `Observação:\n${obs}\n\n` : "") +
+        `Peço orientações para assinatura e formalização.`;
+
+      window.location.href = waText(msg);
+    });
+  </script>
+</body>
+
+</html>

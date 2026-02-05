@@ -4,15 +4,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lucro Invisível • Recorrência Essencial</title>
+  <title>Lucro Invisível • Atendimento que vira venda</title>
   <meta name="description"
-    content="Lucro Invisível: serviço recorrente para descobrir e corrigir onde sua empresa perde dinheiro no atendimento. Plano Essencial a partir de R$ 297/mês (mínimo 90 dias). Planos avançados sob consulta." />
+    content="Descubra onde sua empresa perde dinheiro no atendimento e transforme isso em padrão, conversão e crescimento. Plano inicial a partir de R$ 297/mês." />
 
   <style>
     :root {
       --bg: #07090f;
-      --panel: #0b1020;
-      --panel2: rgba(255, 255, 255, .04);
+      --panel: rgba(255, 255, 255, .04);
       --border: rgba(255, 255, 255, .12);
       --text: rgba(255, 255, 255, .94);
       --muted: rgba(255, 255, 255, .70);
@@ -27,586 +26,171 @@
       --max: 1140px;
     }
 
-    * {
-      box-sizing: border-box
-    }
-
-    html,
-    body {
-      margin: 0;
-      padding: 0;
+    * { box-sizing: border-box }
+    html, body {
+      margin: 0; padding: 0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      background: var(--bg);
-      color: var(--text)
+      background: var(--bg); color: var(--text);
     }
 
-    a {
-      color: inherit;
-      text-decoration: none
-    }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
 
-    .container {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 20px
-    }
-
-    .hide-mobile {
-      display: block
-    }
-
-    .hide-desktop {
-      display: none
-    }
+    .hide-mobile { display: block; }
+    .hide-desktop { display: none; }
 
     /* NAV */
     .nav {
-      position: sticky;
-      top: 0;
-      z-index: 90;
+      position: sticky; top: 0; z-index: 90;
       background: rgba(7, 9, 15, .86);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
     }
 
     .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      padding: 14px 0;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 14px; padding: 14px 0;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 1000;
-      letter-spacing: .2px
-    }
-
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 1000; letter-spacing: .2px; }
     .logo-box {
-      width: 38px;
-      height: 38px;
-      border-radius: 14px;
+      width: 38px; height: 38px; border-radius: 14px;
       background: linear-gradient(135deg, var(--green), var(--green2));
-      color: #041308;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 1100;
+      color: #041308; display: flex; align-items: center; justify-content: center; font-weight: 1100;
     }
+    .brand small { display: block; color: var(--muted2); font-weight: 800; margin-top: 2px; }
 
-    .brand small {
-      display: block;
-      color: var(--muted2);
-      font-weight: 800;
-      margin-top: 2px
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 14px;
-      align-items: center
-    }
-
-    .nav-links a {
-      color: var(--muted);
-      font-weight: 900;
-      font-size: 13px
-    }
-
-    .nav-links a:hover {
-      color: var(--text)
-    }
+    .nav-links { display: flex; gap: 14px; align-items: center; }
+    .nav-links a { color: var(--muted); font-weight: 900; font-size: 13px; }
+    .nav-links a:hover { color: var(--text); }
 
     /* BUTTONS */
     .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 12px 16px;
-      border-radius: 14px;
-      font-weight: 1000;
-      border: 1px solid var(--border);
-      background: rgba(255, 255, 255, .04);
-      transition: .15s;
-      white-space: nowrap;
-      cursor: pointer;
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 12px 16px; border-radius: 14px; font-weight: 1000;
+      border: 1px solid var(--border); background: rgba(255, 255, 255, .04);
+      transition: .15s; white-space: nowrap; cursor: pointer;
     }
-
-    .btn:hover {
-      transform: translateY(-1px);
-      background: rgba(255, 255, 255, .06)
-    }
-
+    .btn:hover { transform: translateY(-1px); background: rgba(255, 255, 255, .06); }
     .btn.primary {
       background: linear-gradient(135deg, var(--green), var(--green2));
-      color: #041308;
-      border-color: rgba(0, 0, 0, .10);
+      color: #041308; border-color: rgba(0, 0, 0, .10);
       box-shadow: 0 22px 70px rgba(124, 255, 46, .16);
     }
+    .btn.primary:hover { box-shadow: 0 28px 90px rgba(124, 255, 46, .20); }
+    .btn.ghost { border-color: rgba(124, 255, 46, .30); background: rgba(124, 255, 46, .08); color: rgba(124, 255, 46, .95); }
+    .btn.full { width: 100%; }
 
-    .btn.primary:hover {
-      box-shadow: 0 28px 90px rgba(124, 255, 46, .20)
-    }
-
-    .btn.ghost {
-      border-color: rgba(124, 255, 46, .30);
-      background: rgba(124, 255, 46, .08);
-      color: rgba(124, 255, 46, .95);
-    }
-
-    .btn.full {
-      width: 100%
-    }
-
-    /* HERO with VIDEO */
-    .hero {
-      position: relative;
-      overflow: hidden;
-      border-bottom: 1px solid var(--border);
-      background: var(--bg);
-    }
-
-    .hero-media {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      overflow: hidden;
-    }
-
+    /* HERO */
+    .hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--border); }
+    .hero-media { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
     .hero-media video {
-      position: absolute;
-      top: 50%;
-      left: 50%;
+      position: absolute; top: 50%; left: 50%;
       transform: translate(-50%, -50%);
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto;
-      object-fit: cover;
-      opacity: .55;
-      filter: contrast(1.05) saturate(1.05);
+      min-width: 100%; min-height: 100%; object-fit: cover;
+      opacity: .55; filter: contrast(1.05) saturate(1.05);
     }
-
     .hero-media::after {
-      content: "";
-      position: absolute;
-      inset: 0;
+      content: ""; position: absolute; inset: 0;
       background:
         radial-gradient(900px 360px at 18% 12%, rgba(124, 255, 46, .16), transparent 60%),
         radial-gradient(900px 360px at 85% 55%, rgba(61, 255, 121, .12), transparent 55%),
         linear-gradient(180deg, rgba(7, 9, 15, .35), rgba(7, 9, 15, .92));
     }
-
     .hero-fallback {
-      position: absolute;
-      inset: 0;
+      position: absolute; inset: 0;
       background:
         linear-gradient(90deg, rgba(7, 9, 15, .92), rgba(7, 9, 15, .45)),
         url("https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=2000&q=80") center/cover no-repeat;
       opacity: 1;
     }
 
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      padding: 82px 0 72px
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.25fr .75fr;
-      gap: 18px;
-      align-items: center;
-    }
+    .hero-content { position: relative; z-index: 2; padding: 82px 0 72px; }
+    .hero-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: 18px; align-items: center; }
 
     .hero-logo {
-      width: 88px;
-      height: 88px;
-      border-radius: 28px;
+      width: 88px; height: 88px; border-radius: 28px;
       background: linear-gradient(135deg, var(--green), var(--green2));
-      color: #041308;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 40px;
-      font-weight: 1200;
-      box-shadow: 0 30px 90px rgba(124, 255, 46, .28);
+      color: #041308; display: flex; align-items: center; justify-content: center;
+      font-size: 40px; font-weight: 1200; box-shadow: 0 30px 90px rgba(124, 255, 46, .28);
       margin-bottom: 16px;
     }
 
     .kicker {
-      display: inline-flex;
-      gap: 10px;
-      align-items: center;
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(255, 255, 255, .04);
-      color: var(--muted);
-      font-weight: 1000;
-      font-size: 13px;
-      margin-bottom: 14px;
-      width: fit-content;
+      display: inline-flex; gap: 10px; align-items: center;
+      padding: 8px 12px; border-radius: 999px;
+      border: 1px solid var(--border); background: rgba(255, 255, 255, .04);
+      color: var(--muted); font-weight: 1000; font-size: 13px; margin-bottom: 14px; width: fit-content;
     }
 
-    h1 {
-      margin: 0 0 14px;
-      font-size: clamp(40px, 5vw, 64px);
-      line-height: 1.03;
-      letter-spacing: -1px;
-    }
-
-    .hero p {
-      margin: 0;
-      font-size: 18px;
-      line-height: 1.75;
-      color: var(--muted);
-      max-width: 60ch;
-    }
-
-    .hero-actions {
-      margin-top: 20px;
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      align-items: center
-    }
-
-    .hero-note {
-      margin-top: 14px;
-      color: var(--muted2);
-      font-size: 13px;
-      line-height: 1.55
-    }
+    h1 { margin: 0 0 14px; font-size: clamp(40px, 5vw, 62px); line-height: 1.03; letter-spacing: -1px; }
+    .hero p { margin: 0; font-size: 18px; line-height: 1.75; color: var(--muted); max-width: 60ch; }
+    .hero-actions { margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    .hero-note { margin-top: 14px; color: var(--muted2); font-size: 13px; line-height: 1.55; }
 
     .hero-card {
-      border-radius: var(--radius2);
-      border: 1px solid var(--border);
+      border-radius: var(--radius2); border: 1px solid var(--border);
       background: rgba(255, 255, 255, .05);
-      box-shadow: var(--shadow);
-      padding: 18px;
+      box-shadow: var(--shadow); padding: 18px;
     }
-
     .hero-card h3 {
-      margin: 0 0 10px;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: .22px;
-      color: var(--muted2);
-      font-weight: 1100;
+      margin: 0 0 10px; font-size: 13px; text-transform: uppercase; letter-spacing: .22px;
+      color: var(--muted2); font-weight: 1100;
     }
-
-    .metrics {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px
-    }
-
+    .metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     .metric {
-      border-radius: 16px;
-      border: 1px solid rgba(255, 255, 255, .10);
-      background: rgba(255, 255, 255, .03);
-      padding: 14px;
+      border-radius: 16px; border: 1px solid rgba(255, 255, 255, .10);
+      background: rgba(255, 255, 255, .03); padding: 14px;
     }
-
-    .metric strong {
-      display: block;
-      font-weight: 1100;
-      margin-bottom: 6px
-    }
-
-    .metric span {
-      display: block;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.45
-    }
+    .metric strong { display: block; font-weight: 1100; margin-bottom: 6px; }
+    .metric span { display: block; color: var(--muted); font-size: 13px; line-height: 1.45; }
 
     /* SECTIONS */
-    section {
-      padding: 82px 0
-    }
+    section { padding: 82px 0; }
+    .section-title { font-size: 34px; margin: 0 0 10px; letter-spacing: -.6px; }
+    .section-sub { margin: 0 0 24px; color: var(--muted); line-height: 1.8; max-width: 84ch; }
 
-    .section-title {
-      font-size: 34px;
-      margin: 0 0 10px;
-      letter-spacing: -.6px
-    }
+    .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 18px; }
+    .card { border-radius: 18px; border: 1px solid var(--border); background: rgba(255, 255, 255, .04); padding: 18px; overflow: hidden; }
+    .card h4 { margin: 0 0 8px; letter-spacing: -.2px; }
+    .card p { margin: 0; color: var(--muted); line-height: 1.75; font-size: 14px; }
 
-    .section-sub {
-      margin: 0 0 24px;
-      color: var(--muted);
-      line-height: 1.8;
-      max-width: 84ch
+    .banner {
+      border-radius: 22px; border: 1px solid rgba(124, 255, 46, .35);
+      background: radial-gradient(900px 360px at 18% 20%, rgba(124, 255, 46, .12), transparent 60%), rgba(255, 255, 255, .04);
+      padding: 18px; display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; margin-top: 18px;
     }
+    .banner strong { display: block; font-size: 18px; letter-spacing: -.2px; }
+    .banner p { margin: 8px 0 0; color: var(--muted); line-height: 1.75; }
+    .banner .right { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; justify-content: flex-end; }
 
-    /* IMAGE CARDS */
-    .grid3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-top: 18px
-    }
-
-    .grid2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin-top: 18px
-    }
-
-    .card {
+    /* TABLE */
+    .table-wrap {
+      margin-top: 18px;
       border-radius: 18px;
       border: 1px solid var(--border);
-      background: rgba(255, 255, 255, .04);
-      padding: 18px;
       overflow: hidden;
+      background: rgba(255, 255, 255, .03);
     }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 14px 14px; border-bottom: 1px solid rgba(255, 255, 255, .08); text-align: left; vertical-align: top; }
+    th { font-size: 12px; color: var(--muted2); text-transform: uppercase; letter-spacing: .2px; }
+    td { color: var(--muted); font-size: 14px; line-height: 1.55; }
+    .ok { color: rgba(124, 255, 46, .95); font-weight: 1100; }
+    .x { color: rgba(255, 255, 255, .45); }
+    .col-plan { width: 22%; }
+    .col-feature { width: 34%; }
 
-    .card h4 {
-      margin: 0 0 8px;
-      letter-spacing: -.2px
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.75;
-      font-size: 14px
-    }
-
-    .img-card {
-      padding: 0;
-      position: relative;
-      min-height: 220px;
-      display: flex;
-      align-items: flex-end;
-    }
-
-    .img-card .bg {
-      position: absolute;
-      inset: 0;
-      background-size: cover;
-      background-position: center;
-      filter: contrast(1.05) saturate(1.05);
-      transform: scale(1.02);
-      opacity: .78;
-    }
-
-    .img-card .overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(7, 9, 15, .10), rgba(7, 9, 15, .92));
-    }
-
-    .img-card .content {
-      position: relative;
-      z-index: 2;
-      padding: 16px 16px 16px;
-    }
-
-    .img-card .tag {
-      display: inline-flex;
-      align-items: center;
-      padding: 6px 10px;
-      border-radius: 999px;
+    .pill {
+      display: inline-flex; align-items: center;
+      padding: 6px 10px; border-radius: 999px;
       border: 1px solid rgba(124, 255, 46, .30);
       background: rgba(124, 255, 46, .08);
       color: rgba(124, 255, 46, .95);
-      font-weight: 1100;
-      font-size: 12px;
-      margin-bottom: 10px;
+      font-weight: 1000; font-size: 12px;
     }
 
-    /* STEPS */
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 12px;
-      margin-top: 18px
-    }
-
-    .step {
-      border-radius: 18px;
-      border: 1px solid var(--border);
-      background: rgba(255, 255, 255, .04);
-      padding: 18px;
-    }
-
-    .step b {
-      display: block;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: .22px;
-      color: var(--muted2);
-      font-weight: 1100;
-      margin-bottom: 6px
-    }
-
-    .step span {
-      display: block;
-      font-weight: 1100
-    }
-
-    .step small {
-      display: block;
-      margin-top: 8px;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.6
-    }
-
-    /* BANNER */
-    .banner {
-      border-radius: 22px;
-      border: 1px solid rgba(124, 255, 46, .35);
-      background:
-        radial-gradient(900px 360px at 18% 20%, rgba(124, 255, 46, .12), transparent 60%),
-        rgba(255, 255, 255, .04);
-      padding: 18px;
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 14px;
-      margin-top: 18px;
-    }
-
-    .banner strong {
-      display: block;
-      font-size: 18px;
-      letter-spacing: -.2px
-    }
-
-    .banner p {
-      margin: 8px 0 0;
-      color: var(--muted);
-      line-height: 1.75
-    }
-
-    .banner .right {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: flex-end
-    }
-
-    /* PLANS */
-    .plans {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-top: 22px
-    }
-
-    .plan {
-      border-radius: 22px;
-      border: 1px solid var(--border);
-      background: rgba(255, 255, 255, .04);
-      padding: 22px;
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .plan h3 {
-      margin: 0 0 6px;
-      font-size: 20px;
-      letter-spacing: -.2px
-    }
-
-    .price {
-      margin: 8px 0 12px;
-      font-size: 34px;
-      font-weight: 1200;
-      letter-spacing: -.8px
-    }
-
-    .price span {
-      font-size: 14px;
-      font-weight: 1000;
-      color: var(--muted2);
-      margin-left: 6px
-    }
-
-    .plan p {
-      margin: 0 0 14px;
-      color: var(--muted);
-      line-height: 1.75
-    }
-
-    .plan ul {
-      margin: 0;
-      padding-left: 18px;
-      color: var(--muted);
-      line-height: 1.65;
-      font-size: 14px;
-      display: grid;
-      gap: 8px
-    }
-
-    .featured {
-      border: 2px solid rgba(124, 255, 46, .55);
-      background:
-        radial-gradient(700px 280px at 20% 0%, rgba(124, 255, 46, .12), transparent 55%),
-        rgba(255, 255, 255, .04);
-    }
-
-    .ribbon {
-      position: absolute;
-      top: 14px;
-      right: 14px;
-      padding: 8px 10px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, var(--green), var(--green2));
-      color: #041308;
-      font-weight: 1200;
-      font-size: 12px;
-      letter-spacing: .2px
-    }
-
-    .ok {
-      color: rgba(124, 255, 46, .95);
-      font-weight: 1200
-    }
-
-    .x {
-      color: rgba(255, 255, 255, .45)
-    }
-
-    /* FAQ */
-    details {
-      border-radius: 18px;
-      border: 1px solid var(--border);
-      background: rgba(255, 255, 255, .04);
-      padding: 16px 16px;
-    }
-
-    details+details {
-      margin-top: 10px
-    }
-
-    summary {
-      cursor: pointer;
-      font-weight: 1100;
-      list-style: none;
-    }
-
-    summary::-webkit-details-marker {
-      display: none
-    }
-
-    details p {
-      margin: 10px 0 0;
-      color: var(--muted);
-      line-height: 1.75;
-      font-size: 14px
-    }
-
-    /* CTA BAND */
+    /* CTA */
     .cta {
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
@@ -615,110 +199,41 @@
         radial-gradient(900px 360px at 85% 65%, rgba(61, 255, 121, .10), transparent 55%),
         rgba(255, 255, 255, .03);
     }
-
-    .cta-row {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 16px
-    }
+    .cta-row { display: flex; align-items: center; justify-content: flex-start; gap: 14px; flex-wrap: wrap; margin-top: 16px; }
 
     /* FOOTER */
-    footer {
-      padding: 34px 0;
-      color: var(--muted2);
-      font-size: 13px
-    }
+    footer { padding: 34px 0; color: var(--muted2); font-size: 13px; }
 
     /* FLOATING WHATSAPP */
     .wa-float {
-      position: fixed;
-      left: 16px;
-      right: 16px;
-      bottom: 14px;
-      z-index: 95;
-      display: none;
+      position: fixed; left: 16px; right: 16px; bottom: 14px;
+      z-index: 95; display: none;
     }
-
     .wa-float a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      padding: 14px 16px;
-      border-radius: 16px;
+      display: flex; align-items: center; justify-content: center; width: 100%;
+      padding: 14px 16px; border-radius: 16px;
       background: linear-gradient(135deg, var(--green), var(--green2));
-      color: #041308;
-      font-weight: 1200;
+      color: #041308; font-weight: 1200;
       box-shadow: 0 28px 90px rgba(124, 255, 46, .16);
       border: 1px solid rgba(0, 0, 0, .10);
     }
 
-    /* RESPONSIVE */
     @media (max-width: 980px) {
-      .nav-links {
-        display: none
-      }
-
-      .hero-grid {
-        grid-template-columns: 1fr
-      }
-
-      .metrics {
-        grid-template-columns: 1fr 1fr
-      }
-
-      .grid3 {
-        grid-template-columns: 1fr
-      }
-
-      .grid2 {
-        grid-template-columns: 1fr
-      }
-
-      .steps {
-        grid-template-columns: 1fr 1fr
-      }
-
-      .plans {
-        grid-template-columns: 1fr
-      }
-
-      .banner {
-        flex-direction: column
-      }
-
-      .banner .right {
-        justify-content: flex-start
-      }
-
-      .wa-float {
-        display: block
-      }
-
-      .hide-mobile {
-        display: none
-      }
-
-      .hide-desktop {
-        display: block
-      }
+      .nav-links { display: none; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .metrics { grid-template-columns: 1fr 1fr; }
+      .grid3 { grid-template-columns: 1fr; }
+      .wa-float { display: block; }
+      .hide-mobile { display: none; }
+      .hide-desktop { display: block; }
+      .col-plan, .col-feature { width: auto; }
+      th, td { padding: 12px; }
     }
 
     @media (max-width: 520px) {
-      section {
-        padding: 58px 0
-      }
-
-      .section-title {
-        font-size: 28px
-      }
-
-      .metrics {
-        grid-template-columns: 1fr
-      }
+      section { padding: 58px 0; }
+      .section-title { font-size: 28px; }
+      .metrics { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -742,14 +257,13 @@
 
         <div class="nav-links">
           <a href="#como">Como funciona</a>
-          <a href="#entregas">O que você recebe</a>
-          <a href="#planos">Plano Essencial</a>
-          <a href="#representantes">Representantes</a>
+          <a href="#planos">Planos</a>
+          <a href="representante.html">Representantes</a>
           <a href="#faq">FAQ</a>
         </div>
 
         <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:flex-end">
-          <button class="btn ghost hide-mobile" onclick="scrollToEl('planos')">Ver Plano Essencial</button>
+          <a class="btn ghost hide-mobile" href="representante.html">Seja Representante</a>
           <a class="btn primary"
             href="https://wa.me/5511939479749?text=Ol%C3%A1!%20Quero%20entender%20como%20o%20Lucro%20Invis%C3%ADvel%20pode%20ajudar%20minha%20empresa.">Falar
             no WhatsApp</a>
@@ -774,22 +288,21 @@
           <div class="kicker">Diagnóstico real • Sem achismo • Foco em lucro</div>
           <h1>Descubra onde sua empresa perde dinheiro no atendimento</h1>
           <p>
-            A gente entra como <b>cliente real</b> nos canais combinados (WhatsApp, ligação e/ou presencial),
-            mostra a realidade do atendimento e entrega um <b>plano prático</b> para seu time
-            responder melhor, conduzir a conversa e fechar com padrão.
+            A gente entra como <b>cliente real</b> (WhatsApp, ligação e/ou presencial),
+            mostra a realidade do atendimento e entrega um caminho prático para corrigir e vender com padrão.
           </p>
 
           <div class="hero-actions">
             <a class="btn primary"
-              href="https://wa.me/5511939479749?text=Ol%C3%A1!%20Quero%20come%C3%A7ar%20no%20Plano%20Essencial%20(a%20partir%20de%20R%24%20297%2Fm%C3%AAs)%20com%20contrato%20m%C3%ADnimo%20de%2090%20dias.">Quero
-              o Plano Essencial</a>
-            <button class="btn" onclick="scrollToEl('planos')">Ver plano</button>
-            <button class="btn ghost" onclick="scrollToEl('representantes')">Ser representante</button>
+              href="https://wa.me/5511939479749?text=Ol%C3%A1!%20Quero%20come%C3%A7ar%20no%20Plano%20Lucro%20Invis%C3%ADvel%20(a%20partir%20de%20R%24%20297%2Fm%C3%AAs).">Quero
+              começar (a partir de R$ 297)</a>
+            <button class="btn" onclick="scrollToEl('planos')">Ver planos</button>
+            <a class="btn ghost" href="representante.html">Seja representante</a>
           </div>
 
           <div class="hero-note">
-            Ideal para negócios que dependem de atendimento humano para vender: serviços, clínicas,
-            academias, escolas, imobiliárias e empresas locais.
+            Ideal para negócios que dependem de atendimento humano para vender: serviços, clínicas, academias, escolas,
+            imobiliárias e empresas locais.
           </div>
         </div>
 
@@ -798,165 +311,69 @@
           <div class="metrics">
             <div class="metric">
               <strong>Tempo de resposta</strong>
-              <span>Se você está perdendo vendas por demora no WhatsApp.</span>
+              <span>Se você perde vendas por demora no WhatsApp.</span>
             </div>
             <div class="metric">
               <strong>Postura e clareza</strong>
-              <span>Se o time transmite segurança ou deixa o cliente confuso.</span>
+              <span>Se o cliente entende e confia no atendimento.</span>
             </div>
             <div class="metric">
               <strong>Condução</strong>
-              <span>Se o atendimento conduz a decisão ou só responde perguntas.</span>
+              <span>Se o atendimento guia a decisão, ou só responde.</span>
             </div>
             <div class="metric">
               <strong>Fechamento</strong>
-              <span>Se existe pedido de decisão ou a conversa morre no meio.</span>
+              <span>Se existe pedido de decisão e follow-up real.</span>
             </div>
           </div>
 
           <div style="margin-top:14px; display:grid; gap:10px;">
-            <button class="btn full" onclick="scrollToEl('entregas')">Ver o que você recebe</button>
+            <button class="btn full" onclick="scrollToEl('planos')">Ver comparação de planos</button>
             <a class="btn primary full"
-              href="https://wa.me/5511939479749?text=Ol%C3%A1!%20Quero%20come%C3%A7ar%20esta%20semana%20no%20Plano%20Essencial%20(a%20partir%20de%20R%24%20297%2Fm%C3%AAs)%20com%20m%C3%ADnimo%20de%2090%20dias.">Quero
-              começar esta semana</a>
+              href="https://wa.me/5511939479749?text=Ol%C3%A1!%20Quero%20come%C3%A7ar%20esta%20semana%20no%20Plano%20Lucro%20Invis%C3%ADvel%20(a%20partir%20de%20R%24%20297%2Fm%C3%AAs).">Começar
+              esta semana</a>
           </div>
 
           <div style="margin-top:12px;color:var(--muted2);font-size:13px;line-height:1.55">
-            <b>Importante:</b> para medir resultado com clareza, o Plano Essencial tem contrato mínimo de <b>90 dias</b>.
+            <b>Plano inicial:</b> a partir de <b>R$ 297/mês</b>. Planos superiores sob consulta.
           </div>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- PROBLEMA -->
-  <section>
+  <!-- COMO FUNCIONA -->
+  <section id="como">
     <div class="container">
-      <h2 class="section-title">O problema não é falta de cliente</h2>
+      <h2 class="section-title">Como funciona</h2>
       <p class="section-sub">
-        Muita empresa investe em anúncio e tráfego… e mesmo assim perde venda por atendimento fraco,
-        falta de padrão e follow-up. O dono sente no caixa, mas não vê onde está o vazamento.
+        A gente entra como cliente real, registra o que acontece no atendimento e transforma isso em correção prática.
+        Sem expor ninguém. O foco é processo, padrão e crescimento.
       </p>
 
       <div class="grid3">
-        <div class="card img-card">
-          <div class="bg"
-            style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80');">
-          </div>
-          <div class="overlay"></div>
-          <div class="content">
-            <div class="tag">WhatsApp</div>
-            <h4>Demora na resposta</h4>
-            <p>O cliente tem pressa. Se você demora, ele fecha com o concorrente.</p>
-          </div>
+        <div class="card">
+          <h4>1) Cliente oculto</h4>
+          <p>Contato real por WhatsApp, ligação e/ou presencial, como um cliente de verdade faria.</p>
         </div>
-
-        <div class="card img-card">
-          <div class="bg"
-            style="background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80');">
-          </div>
-          <div class="overlay"></div>
-          <div class="content">
-            <div class="tag">Processo</div>
-            <h4>Sem padrão no atendimento</h4>
-            <p>Cada atendente fala de um jeito. Conversão fica imprevisível.</p>
-          </div>
+        <div class="card">
+          <h4>2) Diagnóstico claro</h4>
+          <p>Tempo, clareza, postura, condução, fechamento e follow-up. Tudo sem achismo.</p>
         </div>
-
-        <div class="card img-card">
-          <div class="bg"
-            style="background-image:url('https://images.unsplash.com/photo-1523958203904-cdcb402031fd?auto=format&fit=crop&w=1600&q=80');">
-          </div>
-          <div class="overlay"></div>
-          <div class="content">
-            <div class="tag">Vendas</div>
-            <h4>Orçamento e “sumiu”</h4>
-            <p>Sem condução e follow-up, a venda morre no meio do caminho.</p>
-          </div>
+        <div class="card">
+          <h4>3) Correção e padrão</h4>
+          <p>Você recebe orientação prática para corrigir e criar um atendimento que vende todos os dias.</p>
         </div>
       </div>
 
       <div class="banner">
         <div>
           <strong>Não é auditoria. É melhoria.</strong>
-          <p>
-            O objetivo não é “pegar erro” de ninguém. É enxergar a realidade e corrigir com método,
-            para o time atender melhor e vender mais.
-          </p>
+          <p>O objetivo é enxergar a realidade e corrigir com método, para o time atender melhor e vender mais.</p>
         </div>
         <div class="right">
-          <a class="btn"
-            href="https://wa.me/5511939479749?text=Ol%C3%A1!%20Quero%20entender%20como%20voc%C3%AAs%20fazem%20o%20diagn%C3%B3stico%20sem%20expor%20o%20time.">Como
-            funciona sem expor ninguém?</a>
-          <button class="btn primary" onclick="scrollToEl('planos')">Ver Plano Essencial</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- COMO FUNCIONA -->
-  <section id="como">
-    <div class="container">
-      <h2 class="section-title">Como funciona na prática</h2>
-      <p class="section-sub">
-        A gente entra como cliente real, analisa o atendimento como ele acontece no dia a dia e transforma isso
-        em correções simples que o time consegue aplicar.
-      </p>
-
-      <div class="steps">
-        <div class="step">
-          <b>Passo 1</b>
-          <span>Alinhamento</span>
-          <small>Definimos o perfil de cliente, os canais e o objetivo da análise.</small>
-        </div>
-        <div class="step">
-          <b>Passo 2</b>
-          <span>Cliente oculto</span>
-          <small>Fazemos contatos reais no WhatsApp, ligação e/ou presencial.</small>
-        </div>
-        <div class="step">
-          <b>Passo 3</b>
-          <span>Análise</span>
-          <small>Tempo de resposta, clareza, condução, objeções e fechamento.</small>
-        </div>
-        <div class="step">
-          <b>Passo 4</b>
-          <span>Plano prático</span>
-          <small>Correções diretas: frases, abordagem, fluxo e follow-up.</small>
-        </div>
-        <div class="step">
-          <b>Passo 5</b>
-          <span>Recorrência</span>
-          <small>Todo mês repetimos e ajustamos. Melhoria contínua, sem achismo.</small>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ENTREGAS -->
-  <section id="entregas">
-    <div class="container">
-      <h2 class="section-title">O que você recebe</h2>
-      <p class="section-sub">
-        Entregas pensadas para o dono enxergar rápido onde está perdendo dinheiro e corrigir sem complicação.
-      </p>
-
-      <div class="grid2">
-        <div class="card">
-          <h4>Relatório objetivo</h4>
-          <p>Um resumo claro com o que está bom, o que está ruim e o que precisa mudar.</p>
-        </div>
-        <div class="card">
-          <h4>Correções práticas</h4>
-          <p>Sugestões de frases e postura para conduzir melhor e fechar com mais segurança.</p>
-        </div>
-        <div class="card">
-          <h4>Padrão de atendimento</h4>
-          <p>Orientação para deixar o atendimento previsível, profissional e consistente.</p>
-        </div>
-        <div class="card">
-          <h4>Follow-up que funciona</h4>
-          <p>Um jeito simples de não deixar “orçamento e sumiu” virar rotina.</p>
+          <a class="btn" href="representante.html">Quero um representante na minha região</a>
+          <button class="btn primary" onclick="scrollToEl('planos')">Ver planos</button>
         </div>
       </div>
     </div>
@@ -965,109 +382,140 @@
   <!-- PLANOS -->
   <section id="planos">
     <div class="container">
-      <h2 class="section-title">Plano Essencial</h2>
+      <h2 class="section-title">Comparativo de Planos</h2>
       <p class="section-sub">
-        Ideal para empresas que querem parar de perder venda por atendimento fraco e criar um padrão real.
-        Contrato mínimo de <b>90 dias</b> para medir resultado com clareza.
+        Comece entendendo onde o dinheiro está vazando. Evolua para correção. Finalize com um atendimento previsível.
       </p>
 
-      <div class="plans">
-        <div class="plan featured">
-          <div class="ribbon">Mais escolhido</div>
-          <h3>Essencial</h3>
-          <div class="price">R$ 297<span>/mês</span></div>
-          <p>Diagnóstico recorrente + correções práticas para seu atendimento vender melhor.</p>
-          <ul>
-            <li class="ok">Cliente oculto recorrente</li>
-            <li class="ok">Relatório direto e acionável</li>
-            <li class="ok">Correções e padrão do atendimento</li>
-            <li class="ok">Contrato mínimo de 90 dias</li>
-            <li class="x">Treinamento presencial (sob consulta)</li>
-          </ul>
-          <a class="btn primary full"
-            href="https://wa.me/5511939479749?text=Ol%C3%A1!%20Quero%20contratar%20o%20Plano%20Essencial%20do%20Lucro%20Invis%C3%ADvel%20(R%24%20297%2Fm%C3%AAs)%20com%20m%C3%ADnimo%20de%2090%20dias.">
-            Quero começar agora
-          </a>
-        </div>
-
-        <div class="plan">
-          <h3>Avançado</h3>
-          <div class="price">Sob consulta</div>
-          <p>Para empresas com maior volume de leads e múltiplos pontos de contato.</p>
-          <ul>
-            <li class="ok">Mais canais e variações de teste</li>
-            <li class="ok">Acompanhamento mais intenso</li>
-            <li class="ok">Ajustes estratégicos no processo</li>
-          </ul>
-          <a class="btn full"
-            href="https://wa.me/5511939479749?text=Ol%C3%A1!%20Quero%20entender%20o%20Plano%20Avan%C3%A7ado%20do%20Lucro%20Invis%C3%ADvel.">
-            Falar no WhatsApp
-          </a>
-        </div>
-
-        <div class="plan">
-          <h3>Personalizado</h3>
-          <div class="price">Sob demanda</div>
-          <p>Para redes, franquias e projetos que precisam de uma operação sob medida.</p>
-          <ul>
-            <li class="ok">Escopo e canais customizados</li>
-            <li class="ok">Relatórios sob medida</li>
-            <li class="ok">Atuação estratégica</li>
-          </ul>
-          <a class="btn full"
-            href="https://wa.me/5511939479749?text=Ol%C3%A1!%20Tenho%20um%20projeto%20personalizado%20e%20quero%20avaliar%20com%20voc%C3%AAs.">
-            Conversar
-          </a>
-        </div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+        <span class="pill">Plano inicial a partir de R$ 297/mês</span>
+        <span style="color:var(--muted2); font-size:13px;">Planos superiores sob consulta</span>
       </div>
-    </div>
-  </section>
 
-  <!-- REPRESENTANTES -->
-  <section id="representantes">
-    <div class="container">
-      <h2 class="section-title">Representantes</h2>
-      <p class="section-sub">
-        Se você já fala com empresários e quer vender um serviço simples, recorrente e com valor alto percebido,
-        você pode indicar e ganhar comissão.
-      </p>
+      <div class="table-wrap" role="region" aria-label="Tabela comparativa de planos">
+        <table>
+          <thead>
+            <tr>
+              <th class="col-feature">Recursos</th>
+              <th class="col-plan">Lucro Invisível</th>
+              <th class="col-plan">Renda Visível</th>
+              <th class="col-plan">Máquina de Vendas</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Cliente oculto</td>
+              <td class="ok">✔️</td>
+              <td class="ok">✔️ Recorrente</td>
+              <td class="ok">✔️ Contínuo</td>
+            </tr>
+            <tr>
+              <td>Avaliação real do atendimento (sem achismo)</td>
+              <td class="ok">✔️</td>
+              <td class="ok">✔️</td>
+              <td class="ok">✔️</td>
+            </tr>
+            <tr>
+              <td>WhatsApp, ligação e/ou presencial</td>
+              <td class="ok">✔️</td>
+              <td class="ok">✔️</td>
+              <td class="ok">✔️</td>
+            </tr>
+            <tr>
+              <td>Tempo de resposta, clareza, postura e condução</td>
+              <td class="ok">✔️</td>
+              <td class="ok">✔️</td>
+              <td class="ok">✔️</td>
+            </tr>
+            <tr>
+              <td>Identificação de falhas no fechamento</td>
+              <td class="ok">✔️</td>
+              <td class="ok">✔️</td>
+              <td class="ok">✔️</td>
+            </tr>
+            <tr>
+              <td>Relatório simples e direto</td>
+              <td class="ok">✔️</td>
+              <td class="ok">✔️</td>
+              <td class="ok">✔️</td>
+            </tr>
+            <tr>
+              <td>Correções práticas no atendimento (o que mudar e como)</td>
+              <td class="x">—</td>
+              <td class="ok">✔️</td>
+              <td class="ok">✔️</td>
+            </tr>
+            <tr>
+              <td>Orientação de follow-up (pra não morrer no “orçamento e sumiu”)</td>
+              <td class="x">—</td>
+              <td class="ok">✔️</td>
+              <td class="ok">✔️</td>
+            </tr>
+            <tr>
+              <td>Treinamento com responsável/equipe</td>
+              <td class="x">—</td>
+              <td class="ok">✔️</td>
+              <td class="ok">✔️ Estruturado</td>
+            </tr>
+            <tr>
+              <td>Criação de padrão + roteiros e fluxo de atendimento</td>
+              <td class="x">—</td>
+              <td class="x">—</td>
+              <td class="ok">✔️</td>
+            </tr>
+            <tr>
+              <td>Monitoramento e ajustes contínuos</td>
+              <td class="x">—</td>
+              <td class="x">—</td>
+              <td class="ok">✔️</td>
+            </tr>
+            <tr>
+              <td><b>Investimento</b></td>
+              <td><b class="ok">A partir de R$ 297/mês</b></td>
+              <td>Sob consulta</td>
+              <td>Sob consulta</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <div class="banner">
         <div>
-          <strong>Você indica. Nós executamos.</strong>
-          <p>
-            Modelo direto: você traz o cliente, a operação roda com a gente e você ganha recorrência enquanto o cliente estiver ativo.
-          </p>
+          <strong>Quer falar com um representante da sua região?</strong>
+          <p>Temos representantes comerciais (PJ) comissionados. Você conversa, entende e decide com tranquilidade.</p>
         </div>
         <div class="right">
+          <a class="btn" href="representante.html">Quero um representante</a>
           <a class="btn primary"
-            href="https://wa.me/5511939479749?text=Ol%C3%A1!%20Quero%20ser%20representante%20do%20Lucro%20Invis%C3%ADvel%20e%20entender%20as%20comiss%C3%B5es.">
-            Quero ser representante
+            href="https://wa.me/5511939479749?text=Ol%C3%A1!%20Quero%20come%C3%A7ar%20no%20Plano%20Lucro%20Invis%C3%ADvel%20(a%20partir%20de%20R%24%20297%2Fm%C3%AAs).">
+            Quero começar
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
+  <!-- FAQ (curto) -->
   <section id="faq">
     <div class="container">
-      <h2 class="section-title">Perguntas frequentes</h2>
+      <h2 class="section-title">Perguntas rápidas</h2>
+      <p class="section-sub">Se preferir, chama no WhatsApp e eu respondo direto.</p>
 
-      <details>
-        <summary>O time sabe que está sendo avaliado?</summary>
-        <p>Não. A ideia é capturar a realidade do atendimento como o cliente vê. Isso evita “atendimento ensaiado”.</p>
-      </details>
-
-      <details>
-        <summary>Isso é para expor ou punir funcionários?</summary>
-        <p>Não. O foco é processo, padrão e melhoria. A ideia é fazer o time vender mais com mais segurança.</p>
-      </details>
-
-      <details>
-        <summary>Por que contrato mínimo de 90 dias?</summary>
-        <p>Porque melhora de atendimento é comportamento e rotina. Em 90 dias dá pra medir evolução com clareza.</p>
-      </details>
+      <div class="grid3">
+        <div class="card">
+          <h4>O time é exposto?</h4>
+          <p>Não. O foco é processo e melhoria, sem “caçar culpados”.</p>
+        </div>
+        <div class="card">
+          <h4>Serve pra qualquer empresa?</h4>
+          <p>Principalmente pra quem vende com atendimento humano: WhatsApp, telefone e presencial.</p>
+        </div>
+        <div class="card">
+          <h4>Como começo?</h4>
+          <p>Começa pelo plano inicial (a partir de R$ 297). Se fizer sentido, evolui naturalmente.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1076,31 +524,28 @@
     <div class="container">
       <h2 class="section-title">Pare de perder dinheiro no atendimento</h2>
       <p class="section-sub">
-        Se você já investe em tráfego, anúncio ou tem demanda chegando, mas o caixa não acompanha,
-        o problema pode estar no atendimento. Vamos resolver isso com método.
+        Se você já tem demanda chegando, mas o caixa não acompanha, o problema pode estar no atendimento.
+        Vamos corrigir isso com método.
       </p>
 
       <div class="cta-row">
         <a class="btn primary"
-          href="https://wa.me/5511939479749?text=Ol%C3%A1!%20Quero%20come%C3%A7ar%20agora%20no%20Plano%20Essencial%20do%20Lucro%20Invis%C3%ADvel.">
-          Começar agora no Essencial
+          href="https://wa.me/5511939479749?text=Ol%C3%A1!%20Quero%20come%C3%A7ar%20agora%20no%20Plano%20Lucro%20Invis%C3%ADvel%20(a%20partir%20de%20R%24%20297%2Fm%C3%AAs).">
+          Começar agora (a partir de R$ 297)
         </a>
-        <a class="btn"
-          href="https://wa.me/5511939479749?text=Ol%C3%A1!%20Quero%20tirar%20uma%20d%C3%BAvida%20r%C3%A1pida%20sobre%20o%20Lucro%20Invis%C3%ADvel.">
-          Tirar dúvida no WhatsApp
+        <a class="btn" href="representante.html">
+          Falar com um representante
         </a>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <div class="container">
       © <span id="year"></span> Lucro Invisível. Todos os direitos reservados.
     </div>
   </footer>
 
-  <!-- WHATSAPP FLOAT (MOBILE) -->
   <div class="wa-float">
     <a href="https://wa.me/5511939479749?text=Ol%C3%A1!%20Quero%20entender%20como%20o%20Lucro%20Invis%C3%ADvel%20pode%20ajudar%20minha%20empresa.">
       Falar no WhatsApp
@@ -1110,7 +555,310 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+</body>
 
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seja um Representante • Lucro Invisível</title>
+  <meta name="description"
+    content="Seja um representante comercial (PJ) do Lucro Invisível. Comissões mensais por até 12 meses ou enquanto o cliente estiver ativo (o que ocorrer primeiro)." />
+
+  <style>
+    :root {
+      --bg: #07090f;
+      --panel: rgba(255, 255, 255, .04);
+      --border: rgba(255, 255, 255, .12);
+      --text: rgba(255, 255, 255, .94);
+      --muted: rgba(255, 255, 255, .70);
+      --muted2: rgba(255, 255, 255, .58);
+      --green: #7CFF2E;
+      --green2: #3DFF79;
+      --radius: 18px;
+      --radius2: 22px;
+      --shadow: 0 22px 70px rgba(0, 0, 0, .45);
+      --max: 980px;
+    }
+
+    * { box-sizing: border-box }
+    html, body {
+      margin: 0; padding: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background: var(--bg); color: var(--text);
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+
+    .nav {
+      position: sticky; top: 0; z-index: 90;
+      background: rgba(7, 9, 15, .86);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 14px 0; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 1000; }
+    .logo-box {
+      width: 38px; height: 38px; border-radius: 14px;
+      background: linear-gradient(135deg, var(--green), var(--green2));
+      color: #041308; display: flex; align-items: center; justify-content: center; font-weight: 1100;
+    }
+    .brand small { display: block; color: var(--muted2); font-weight: 800; margin-top: 2px; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 12px 16px; border-radius: 14px; font-weight: 1000;
+      border: 1px solid var(--border); background: rgba(255, 255, 255, .04);
+      transition: .15s; white-space: nowrap; cursor: pointer;
+    }
+    .btn:hover { transform: translateY(-1px); background: rgba(255, 255, 255, .06); }
+    .btn.primary {
+      background: linear-gradient(135deg, var(--green), var(--green2));
+      color: #041308; border-color: rgba(0, 0, 0, .10);
+      box-shadow: 0 22px 70px rgba(124, 255, 46, .16);
+    }
+
+    header { padding: 58px 0 22px; }
+    h1 { margin: 0 0 10px; font-size: clamp(32px, 4.2vw, 46px); letter-spacing: -1px; }
+    p.lead { margin: 0; color: var(--muted); line-height: 1.8; font-size: 16px; max-width: 70ch; }
+
+    section { padding: 34px 0; }
+    .card {
+      border-radius: var(--radius2);
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, .04);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
+    .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 14px; }
+
+    .item { border-radius: 18px; border: 1px solid var(--border); background: rgba(255, 255, 255, .03); padding: 16px; }
+    .item h3 { margin: 0 0 8px; font-size: 16px; letter-spacing: -.3px; }
+    .item p { margin: 0; color: var(--muted); line-height: 1.75; font-size: 14px; }
+
+    .pill {
+      display: inline-flex; align-items: center;
+      padding: 6px 10px; border-radius: 999px;
+      border: 1px solid rgba(124, 255, 46, .30);
+      background: rgba(124, 255, 46, .08);
+      color: rgba(124, 255, 46, .95);
+      font-weight: 1000; font-size: 12px;
+    }
+
+    .rules ul { margin: 10px 0 0; padding-left: 18px; color: var(--muted); line-height: 1.75; font-size: 14px; display: grid; gap: 8px; }
+    .rules b { color: var(--text); }
+
+    label { display: block; margin: 12px 0 6px; color: var(--muted2); font-size: 13px; font-weight: 900; }
+    input, select, textarea {
+      width: 100%;
+      background: rgba(255, 255, 255, .03);
+      border: 1px solid rgba(255, 255, 255, .12);
+      color: var(--text);
+      border-radius: 14px;
+      padding: 12px 12px;
+      outline: none;
+      font-size: 14px;
+    }
+    textarea { min-height: 110px; resize: vertical; }
+    .form-actions { margin-top: 12px; display: flex; gap: 10px; flex-wrap: wrap; }
+
+    footer { padding: 28px 0; color: var(--muted2); font-size: 13px; border-top: 1px solid var(--border); margin-top: 26px; }
+
+    @media (max-width: 900px) {
+      .grid2, .grid3 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    const WA = "https://wa.me/5511939479749";
+    const waText = (t) => `${WA}?text=${encodeURIComponent(t)}`;
+  </script>
+
+  <div class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a class="brand" href="index.html" aria-label="Voltar para a página inicial">
+          <div class="logo-box">LI</div>
+          <div style="line-height:1.05">
+            <div>Lucro Invisível</div>
+            <small>Representantes Comerciais (PJ)</small>
+          </div>
+        </a>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end">
+          <a class="btn" href="index.html#planos">Ver planos</a>
+          <a class="btn primary" id="ctaTop" href="#">Quero ser representante</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header>
+    <div class="container">
+      <span class="pill">Obrigatório: Representante PJ</span>
+      <h1>Seja um representante da sua região</h1>
+      <p class="lead">
+        Você indica, a gente executa. Você recebe comissões mensais por até <b>12 meses</b> ou enquanto o cliente
+        permanecer pagante e ativo, <b>o que ocorrer primeiro</b>.
+      </p>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <div class="grid3">
+        <div class="item">
+          <h3>Modelo simples</h3>
+          <p>Você prospecta e fecha. Nós entregamos. Você recebe recorrência com regras claras.</p>
+        </div>
+        <div class="item">
+          <h3>Produto fácil de vender</h3>
+          <p>Dono entende rápido: “onde estou perdendo dinheiro no atendimento e como corrigir”.</p>
+        </div>
+        <div class="item">
+          <h3>Recorrência de verdade</h3>
+          <p>Comissão mensal por até 12 meses (ou enquanto o cliente estiver ativo).</p>
+        </div>
+      </div>
+
+      <div class="grid2" style="margin-top:14px;">
+        <div class="card rules">
+          <h2 style="margin:0 0 6px; letter-spacing:-.4px;">Como funciona a comissão</h2>
+          <ul>
+            <li><b>Início:</b> a comissão começa após o <b>primeiro pagamento confirmado</b> do cliente.</li>
+            <li><b>Duração:</b> paga por até <b>12 meses</b> ou enquanto o cliente estiver <b>ativo</b>, o que ocorrer primeiro.</li>
+            <li><b>Cancelou?</b> sem cliente ativo, não há comissão no mês seguinte.</li>
+            <li><b>Upgrade de plano:</b> a comissão acompanha o valor do plano (se o cliente subir, você ganha sobre o novo valor).</li>
+            <li><b>Pagamento:</b> mensal em data fixa (definida no contrato).</li>
+          </ul>
+          <p style="margin:10px 0 0; color:var(--muted2); font-size:13px; line-height:1.6;">
+            Observação: os percentuais e a data de pagamento ficam definidos no contrato do representante.
+          </p>
+        </div>
+
+        <div class="card rules">
+          <h2 style="margin:0 0 6px; letter-spacing:-.4px;">Regras básicas</h2>
+          <ul>
+            <li><b>Obrigatório PJ:</b> só trabalhamos com representante com <b>CNPJ ativo</b>.</li>
+            <li><b>Sem exclusividade automática:</b> a região pode ser ajustada por performance.</li>
+            <li><b>Conduta:</b> abordagem profissional e transparente (sem promessas irreais).</li>
+            <li><b>Cadastro:</b> você registra os leads pelo canal combinado para garantir a atribuição.</li>
+          </ul>
+          <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn" href="index.html">Voltar ao site</a>
+            <a class="btn primary" id="ctaMid" href="#">Quero me cadastrar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="card">
+        <h2 style="margin:0 0 6px; letter-spacing:-.4px;">Cadastro de representante (PJ)</h2>
+        <p style="margin:0 0 14px; color:var(--muted); line-height:1.75;">
+          Preencha e envie. Isso vai direto no WhatsApp com suas informações.
+        </p>
+
+        <form id="repForm">
+          <div class="grid2">
+            <div>
+              <label>Nome completo</label>
+              <input name="nome" required placeholder="Ex: Renato Mendes" />
+            </div>
+            <div>
+              <label>WhatsApp</label>
+              <input name="whatsapp" required placeholder="Ex: (11) 99999-9999" />
+            </div>
+          </div>
+
+          <div class="grid2">
+            <div>
+              <label>CNPJ (obrigatório)</label>
+              <input name="cnpj" required placeholder="Ex: 12.345.678/0001-90" />
+            </div>
+            <div>
+              <label>Nome da empresa (PJ)</label>
+              <input name="empresa" required placeholder="Ex: Sua Empresa LTDA" />
+            </div>
+          </div>
+
+          <div class="grid2">
+            <div>
+              <label>Cidade/UF (sua região)</label>
+              <input name="regiao" required placeholder="Ex: Suzano/SP" />
+            </div>
+            <div>
+              <label>Experiência comercial</label>
+              <select name="exp" required>
+                <option value="">Selecione</option>
+                <option>Iniciante (até 1 ano)</option>
+                <option>Intermediário (1 a 3 anos)</option>
+                <option>Avançado (3+ anos)</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label>Seu público ideal (quem você consegue acessar?)</label>
+            <textarea name="publico" required
+              placeholder="Ex: clínicas, academias, escolas, imobiliárias, prestadores de serviço..."></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn primary" type="submit">Enviar cadastro no WhatsApp</button>
+            <a class="btn" href="index.html#planos">Ver planos</a>
+          </div>
+
+          <p style="margin:12px 0 0; color:var(--muted2); font-size:13px; line-height:1.6;">
+            Ao enviar, você confirma que atua como PJ (CNPJ ativo) e aceita as regras do programa.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Lucro Invisível. Página de representantes (PJ).
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const ctaMsg = "Olá! Quero me cadastrar como REPRESENTANTE (PJ) do Lucro Invisível. Minha região é: ";
+    document.getElementById("ctaTop").href = waText(ctaMsg);
+    document.getElementById("ctaMid").href = waText(ctaMsg);
+
+    const form = document.getElementById("repForm");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const fd = new FormData(form);
+      const data = Object.fromEntries(fd.entries());
+
+      const msg =
+        `Olá! Quero me cadastrar como REPRESENTANTE (PJ) do Lucro Invisível.\n\n` +
+        `Nome: ${data.nome}\n` +
+        `WhatsApp: ${data.whatsapp}\n` +
+        `CNPJ: ${data.cnpj}\n` +
+        `Empresa (PJ): ${data.empresa}\n` +
+        `Região: ${data.regiao}\n` +
+        `Experiência: ${data.exp}\n\n` +
+        `Público ideal:\n${data.publico}\n\n` +
+        `Obs: Estou ciente que o representante deve ser PJ (CNPJ ativo).`;
+
+      window.location.href = waText(msg);
+    });
+  </script>
 </body>
 
 </html>
